@@ -21,30 +21,31 @@ from urllib.parse import unquote
 from cleantext import clean
 import unicodedata
 
+
 def clean_title(text):
     text = unquote(text)
-    text = clean(text.strip(),fix_unicode=True,               # fix various unicode errors
-    to_ascii=False,                  # transliterate to closest ASCII representation
-    lower=False,                     # lowercase text
-    no_line_breaks=False,           # fully strip line breaks as opposed to only normalizing them
-    no_urls=True,                  # replace all URLs with a special token
-    no_emails=False,                # replace all email addresses with a special token
-    no_phone_numbers=False,         # replace all phone numbers with a special token
-    no_numbers=False,               # replace all numbers with a special token
-    no_digits=False,                # replace all digits with a special token
-    no_currency_symbols=False,      # replace all currency symbols with a special token
-    no_punct=False,                 # remove punctuations
-    replace_with_url="<URL>",
-    replace_with_email="<EMAIL>",
-    replace_with_phone_number="<PHONE>",
-    replace_with_number="<NUMBER>",
-    replace_with_digit="0",
-    replace_with_currency_symbol="<CUR>",
-    lang="en"                       # set to 'de' for German special handling
-    )
+    text = clean(text.strip(), fix_unicode=True,  # fix various unicode errors
+                 to_ascii=False,  # transliterate to closest ASCII representation
+                 lower=False,  # lowercase text
+                 no_line_breaks=False,  # fully strip line breaks as opposed to only normalizing them
+                 no_urls=True,  # replace all URLs with a special token
+                 no_emails=False,  # replace all email addresses with a special token
+                 no_phone_numbers=False,  # replace all phone numbers with a special token
+                 no_numbers=False,  # replace all numbers with a special token
+                 no_digits=False,  # replace all digits with a special token
+                 no_currency_symbols=False,  # replace all currency symbols with a special token
+                 no_punct=False,  # remove punctuations
+                 replace_with_url="<URL>",
+                 replace_with_email="<EMAIL>",
+                 replace_with_phone_number="<PHONE>",
+                 replace_with_number="<NUMBER>",
+                 replace_with_digit="0",
+                 replace_with_currency_symbol="<CUR>",
+                 lang="en"  # set to 'de' for German special handling
+                 )
     return text
 
-def get_wikipage_by_id(id, db):
+
     page = id.split('_')[0]
     page = clean_title(page)
     page = unicodedata.normalize('NFD', page).strip()
@@ -59,6 +60,7 @@ def get_wikipage_by_id(id, db):
         pa = None
     # print(lines)
     return pa, page
+
 
 class WikiTitle(WikiElement):
     def __init__(self, name, content):
@@ -77,48 +79,52 @@ class WikiTitle(WikiElement):
     def __str__(self):
         return self.content
 
+
 class WikiPage:
-    def __init__(self, title, dict, filter = None, mode = None):
-        self.error_dict = {'tables_empty' : 0, 'tables_formatting_errors': 0, 'list_empty':0, 'sentence_empty': 0, 'list_formatting_errors':0, 'sentences_empty': 0}
+    def __init__(self, title, dict, filter=None, mode=None):
+        self.error_dict = {'tables_empty': 0, 'tables_formatting_errors': 0, 'list_empty': 0, 'sentence_empty': 0,
+                           'list_formatting_errors': 0, 'sentences_empty': 0}
         self.page_items = {}
         self.title = WikiTitle('_title', title)
         elements_to_consider = None
         if mode == 'intro':
-            elements_to_consider = dict['order'][:dict['order'].index('section_0')] if 'section_0' in dict['order'] else dict['order']
+            elements_to_consider = dict['order'][:dict['order'].index('section_0')] if 'section_0' in dict['order'] else \
+            dict['order']
         for entry in dict:
             if entry in ['title', 'order'] or (filter != None and filter not in entry): continue
             if elements_to_consider and entry not in elements_to_consider: continue
             # entry_s = process_id(entry, is_annotation=False)
             if entry.startswith('table_'):
                 if len(dict[entry]['table']) == 0:
-                    self.error_dict['tables_empty'] +=1
+                    self.error_dict['tables_empty'] += 1
                     continue
                 try:
                     tab = WikiTable(entry, dict[entry], self.title.content)
                     self.page_items[entry] = tab
                 except Exception:
-                    self.error_dict['tables_formatting_errors']+=1
+                    self.error_dict['tables_formatting_errors'] += 1
                     # traceback.print_exc()
                     # logging.warning("Table formatting error in {}, {}".format(title, entry))
             if entry.startswith('list_'):
-                if len(dict[entry]['list']) == 0 or len([en['value'] for en in dict[entry]['list'] if en['value'] != '']) == 0:
-                    self.error_dict['list_empty'] +=1
+                if len(dict[entry]['list']) == 0 or len(
+                        [en['value'] for en in dict[entry]['list'] if en['value'] != '']) == 0:
+                    self.error_dict['list_empty'] += 1
                     continue
                 try:
                     tab = WikiList(entry, dict[entry], self.title.content)
                     self.page_items[entry] = tab
                 except Exception:
-                    self.error_dict['list_formatting_errors']+=1
+                    self.error_dict['list_formatting_errors'] += 1
                     # logging.warning("List formatting error in {}, {}".format(title, entry))
                     # traceback.print_exc()
                     # print(title, entry)
             elif entry.startswith('sentence_'):
                 text = WikiSentence(entry, dict[entry], self.title.content)
-                self.page_items[ entry] = text
+                self.page_items[entry] = text
             elif entry.startswith('section_'):
                 section = WikiSection(entry, dict[entry], self.title.content)
                 # print(str(section))
-                self.page_items[entry ] = section
+                self.page_items[entry] = section
 
         self.page_order = [el for el in dict['order'] if el in self.page_items]
 
@@ -127,17 +133,17 @@ class WikiPage:
 
     def get_previous_k_elements(self, element_id, k=1):
         element_position = self.page_order.index(element_id)
-        return [self.get_element_by_id(ele) for ele in reversed(self.page_order[element_position-k:element_position])]
+        return [self.get_element_by_id(ele) for ele in reversed(self.page_order[element_position - k:element_position])]
         # return self.get_element_by_id(self.page_order[element_position-1]) if element_position-1 >=0 else None
 
     def get_next_k_elements(self, element_id, k=1):
         element_position = self.page_order.index(element_id)
-        return [self.get_element_by_id(ele) for ele in self.page_order[element_position +1 :element_position+(k+1)]]
+        return [self.get_element_by_id(ele) for ele in self.page_order[element_position + 1:element_position + (k + 1)]]
         # return self.get_element_by_id(self.page_order[element_position-1]) if element_position-1 >=0 else None
 
     def get_next_element(self, element_id):
         element_position = self.page_order.index(element_id)
-        return self.get_element_by_id(self.page_order[element_position-1]) if element_position-1 >=0 else None
+        return self.get_element_by_id(self.page_order[element_position - 1]) if element_position - 1 >= 0 else None
 
     def get_title_content(self):
         return str(self.title)
@@ -154,7 +160,6 @@ class WikiPage:
         for tab in self.get_tables():
             if cell_id in tab.all_cells:
                 return tab.get_cell(cell_id)
-
 
     def get_table_from_cell_id(self, cell_id):
         for tab in self.get_tables():
@@ -181,25 +186,25 @@ class WikiPage:
         return [self.page_items[el] for el in self.page_order]
 
     def get_tables(self):
-        return [ele for key,ele in self.page_items.items() if key.startswith('table_')]
+        return [ele for key, ele in self.page_items.items() if key.startswith('table_')]
 
     def get_lists(self):
-        return [ele for key,ele in self.page_items.items() if  key.startswith('list_')]
+        return [ele for key, ele in self.page_items.items() if key.startswith('list_')]
 
     def get_sections(self):
-        return [ele for key,ele in self.page_items.items() if  key.startswith('section_')]
+        return [ele for key, ele in self.page_items.items() if key.startswith('section_')]
 
     def get_sentences(self):
-        return [ele for key,ele in self.page_items.items() if  key.startswith('sentence_')]
+        return [ele for key, ele in self.page_items.items() if key.startswith('sentence_')]
 
     def get_cells(self):
-        return [ele for key,ele in self.page_items.items() if  key.startswith('cell_')]
+        return [ele for key, ele in self.page_items.items() if key.startswith('cell_')]
 
     def get_list_items(self):
-        return [ele for key,ele in self.page_items.items() if  key.startswith('item_')]
+        return [ele for key, ele in self.page_items.items() if key.startswith('item_')]
 
     def get_context(self, id):
-        if  id.startswith('sentence_'):
+        if id.startswith('sentence_'):
             return self._get_sentence_context(id)
         elif id.startswith('item_'):
             return self._get_list_context(id)
@@ -214,7 +219,6 @@ class WikiPage:
     def __str__(self):
         return '\n'.join([str(el) for el in self.get_page()])
 
-
     def convert_ids_to_objects(self, id_list):
         return [self.page_items[el] for el in id_list]
 
@@ -222,8 +226,7 @@ class WikiPage:
         table = None
         for ele in self.get_tables():
             if caption in ele.get_ids():
-
-            # if ele.name.split('_')[-1] == cell.split('_')[1]:
+                # if ele.name.split('_')[-1] == cell.split('_')[1]:
                 table = ele
                 break
         if table == None:
@@ -265,7 +268,6 @@ class WikiPage:
                 break
         return table
 
-
     def _get_cell_context(self, cell):
         table = None
         for ele in self.get_tables():
@@ -276,7 +278,7 @@ class WikiPage:
             logging.warning("Table not found in context, {}".format(cell))
         cell_row = table.all_cells[cell].row_num
         cell_col = table.all_cells[cell].col_num
-        headers_row = [cell for i, cell in  enumerate(table.rows[cell_row].row) if cell_col > i]
+        headers_row = [cell for i, cell in enumerate(table.rows[cell_row].row) if cell_col > i]
         headers_row.reverse()
         context_row = set([])
         encountered_header = False
@@ -298,7 +300,6 @@ class WikiPage:
                 break
 
         return self._get_section_context(table.name) + list(context_row) + list(context_column)
-
 
     def _get_section_context(self, element_id):
         section_context = []
@@ -324,7 +325,7 @@ class WikiPage:
         return section_context
 
     def __del__(self):
-        for ele,item in self.page_items.items():
+        for ele, item in self.page_items.items():
             del item
         del self.title
         del self.page_order
