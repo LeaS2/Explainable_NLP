@@ -1,7 +1,7 @@
 #! /bin/bash
 
 set -ex
-
+export PYTHONPATH="${PYTHONPATH}:${PWD}/Explainable_NLP/"
 python scripts/fact_verification.py \
   --model_name_or_path tals/albert-base-vitaminc-fever \
   --tasks_names feverous \
@@ -17,7 +17,7 @@ python scripts/fact_verification.py \
   --output_dir results/feverous_2 \
   --eval_all_checkpoints \
   #--test_on_best_ckpt \
-  #--do_train
+  --do_train
   "$@"
 
   #--fp16 \
