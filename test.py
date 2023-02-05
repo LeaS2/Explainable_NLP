@@ -11,7 +11,7 @@ page_json = db.get_doc_json("Anarchism")
 wiki_page = WikiPage("Anarchism", page_json)
 
 data = []
-with open('feverous_dev_challenges.jsonl', encoding="utf8") as f:
+with open('feverous_train_challenges.jsonl', encoding="utf8") as f:
     for i, line in enumerate(f):
         if i == 0:
             continue
@@ -29,7 +29,6 @@ with open('feverous_dev_challenges.jsonl', encoding="utf8") as f:
                 check = 1
             elif "_table_" in content_ele:
                 check = 1
-
         if check == 0:
             evidence_string = ""
 
@@ -46,18 +45,9 @@ with open('feverous_dev_challenges.jsonl', encoding="utf8") as f:
             element.pop("challenge")
             element.pop("evidence")
             element.update({"evidence": evidence_string})
-            if element.get("label") == 1:
-                element.pop("label")
-                element.update({"label": "REFUTES"})
-            elif element.get("label") == 0:
-                element.pop("label")
-                element.update({"label": "SUPPORTS"})
-            else:
-                element.pop("label")
-                element.update({"label": "NOT ENOUGH INFO"})
 
             data.append(element.copy())
-with jsonlines.open('new_dev_FEVEROUS.jsonl', mode='w') as writer:
+with jsonlines.open('new_FEVEROUS.jsonl', mode='w') as writer:
     writer.write_all(data)
 
 # 1. alles raus mit "_cell_" in evidence(list)[content] ____done
