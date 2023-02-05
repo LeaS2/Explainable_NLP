@@ -1,0 +1,24 @@
+{
+  "bos_token": "[CLS]",
+  "cls_token": "[CLS]",
+  "do_lower_case": true,
+  "eos_token": "[SEP]",
+  "keep_accents": false,
+  "mask_token": {
+    "__type": "AddedToken",
+    "content": "[MASK]",
+    "lstrip": true,
+    "normalized": false,
+    "rstrip": false,
+    "single_word": false
+  },
+  "model_max_length": 512,
+  "name_or_path": "tals/albert-base-vitaminc-fever",
+  "pad_token": "<pad>",
+  "remove_space": true,
+  "sep_token": "[SEP]",
+  "sp_model_kwargs": {},
+  "special_tokens_map_file": "C:\\Users\\MaxBl/.cache\\huggingface\\hub\\models--tals--albert-base-vitaminc-fever\\snapshots\\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\\special_tokens_map.json",
+  "tokenizer_class": "AlbertTokenizer",
+  "unk_token": "<unk>"
+}

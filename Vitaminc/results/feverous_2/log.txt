@@ -1,0 +1,362 @@
+02/02/2023 14:49:03 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+02/02/2023 14:49:03 - INFO - __main__ -   Training/evaluation parameters VitCTrainingArgs(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=False,
+do_predict=False,
+do_test=True,
+do_train=True,
+eval_accumulation_steps=None,
+eval_all_checkpoints=True,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=2e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=passive,
+log_on_each_node=True,
+logging_dir=results/feverous_2\runs\Feb02_14-49-03_DESKTOP-3T7P34Q,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=50000,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_hf,
+optim_args=None,
+output_dir=results/feverous_2,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=128,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=results/feverous_2,
+save_on_each_node=False,
+save_steps=10000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+test_on_best_ckpt=True,
+tf32=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+02/02/2023 14:49:04 - INFO - transformers.configuration_utils -   loading configuration file config.json from cache at C:\Users\MaxBl/.cache\huggingface\hub\models--tals--albert-base-vitaminc-fever\snapshots\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\config.json
+02/02/2023 14:49:04 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "tals/albert-base-vitaminc-fever",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "feverous"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.25.1",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/02/2023 14:49:04 - INFO - transformers.configuration_utils -   loading configuration file config.json from cache at C:\Users\MaxBl/.cache\huggingface\hub\models--tals--albert-base-vitaminc-fever\snapshots\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\config.json
+02/02/2023 14:49:04 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "tals/albert-base-vitaminc-fever",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.25.1",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/02/2023 14:49:04 - INFO - transformers.tokenization_utils_base -   loading file spiece.model from cache at C:\Users\MaxBl/.cache\huggingface\hub\models--tals--albert-base-vitaminc-fever\snapshots\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\spiece.model
+02/02/2023 14:49:04 - INFO - transformers.tokenization_utils_base -   loading file tokenizer.json from cache at None
+02/02/2023 14:49:04 - INFO - transformers.tokenization_utils_base -   loading file added_tokens.json from cache at None
+02/02/2023 14:49:04 - INFO - transformers.tokenization_utils_base -   loading file special_tokens_map.json from cache at C:\Users\MaxBl/.cache\huggingface\hub\models--tals--albert-base-vitaminc-fever\snapshots\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\special_tokens_map.json
+02/02/2023 14:49:04 - INFO - transformers.tokenization_utils_base -   loading file tokenizer_config.json from cache at C:\Users\MaxBl/.cache\huggingface\hub\models--tals--albert-base-vitaminc-fever\snapshots\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\tokenizer_config.json
+02/02/2023 14:49:04 - INFO - transformers.configuration_utils -   loading configuration file config.json from cache at C:\Users\MaxBl/.cache\huggingface\hub\models--tals--albert-base-vitaminc-fever\snapshots\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\config.json
+02/02/2023 14:49:04 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "tals/albert-base-vitaminc-fever",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.25.1",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/02/2023 14:49:04 - INFO - transformers.configuration_utils -   loading configuration file config.json from cache at C:\Users\MaxBl/.cache\huggingface\hub\models--tals--albert-base-vitaminc-fever\snapshots\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\config.json
+02/02/2023 14:49:04 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "tals/albert-base-vitaminc-fever",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.25.1",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/02/2023 14:49:05 - INFO - transformers.modeling_utils -   loading weights file pytorch_model.bin from cache at C:\Users\MaxBl/.cache\huggingface\hub\models--tals--albert-base-vitaminc-fever\snapshots\15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3\pytorch_model.bin
+02/02/2023 14:49:05 - INFO - transformers.modeling_utils -   All model checkpoint weights were used when initializing AlbertForSequenceClassification.
+
+02/02/2023 14:49:05 - INFO - transformers.modeling_utils -   All the weights of AlbertForSequenceClassification were initialized from the model checkpoint at tals/albert-base-vitaminc-fever.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use AlbertForSequenceClassification for predictions without further training.
+02/02/2023 14:49:05 - INFO - vitaminc.processing.multitask_sent_pair_cls -   Collecting train examples (ratio=1.0) from dataset file at data\feverous
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   *** Example ***
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   guid: 16578
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 13, 22, 21408, 256, 22, 6, 25, 40, 3754, 136, 636, 2558, 14789, 1, 5, 7962, 3019, 6, 1, 14789, 500, 500, 19, 8748, 636, 2558, 2681, 1, 7962, 1664, 49, 1, 5788, 1, 2681, 16035, 136, 500, 500, 15, 636, 2558, 7962, 3019, 1, 7962, 3019, 500, 500, 9, 13, 3, 26600, 108, 15, 21, 3534, 9, 918, 3020, 401, 13, 5, 918, 9, 3399, 1306, 4444, 534, 6, 476, 335, 19, 78, 16035, 136, 15, 998, 15, 21, 475, 19, 342, 2394, 15, 63, 21, 600, 350, 16, 13, 12081, 15, 518, 3516, 19, 356, 1110, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   *** Example ***
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   guid: 71515
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 13, 10834, 13106, 25, 21, 399, 19, 14, 636, 2558, 17482, 8531, 2051, 1, 14789, 1, 17482, 8531, 2051, 256, 500, 500, 16, 636, 2558, 13562, 24134, 15, 1, 15357, 1, 13562, 24134, 500, 500, 15, 636, 2558, 15357, 1, 15357, 500, 500, 9, 32, 25, 335, 19, 14, 636, 2558, 2553, 525, 15, 1, 15357, 1, 2553, 525, 500, 500, 21605, 9, 7967, 525, 15, 41, 74, 26, 151, 122, 21, 4600, 618, 15, 76, 19, 357, 3099, 9918, 4396, 281, 37, 636, 2558, 3073, 1674, 58, 1, 3073, 1674, 58, 500, 500, 17, 785, 7967, 525, 4358, 18, 9, 13, 3, 13, 10834, 13106, 25, 21, 399, 19, 7967, 525, 15, 21, 336, 4600, 618, 163, 357, 3099, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   *** Example ***
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   guid: 77301
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 1288, 13, 18021, 1866, 15, 14, 4984, 2486, 4012, 4146, 16, 14, 636, 2558, 1615, 18, 817, 1, 3132, 1, 17157, 1, 99, 7509, 622, 1, 1615, 18, 817, 454, 1585, 23165, 500, 500, 15, 4929, 765, 899, 17, 14, 636, 2558, 11729, 4951, 49, 1, 263, 13487, 1, 11729, 4951, 49, 4737, 500, 500, 20, 14, 180, 15, 636, 2558, 499, 7065, 1509, 49, 1, 2269, 14251, 1, 499, 7065, 1509, 49, 6221, 500, 500, 20, 14, 280, 17, 14, 636, 2558, 15979, 1, 197, 4893, 18, 1, 23521, 18, 1, 15979, 6600, 1785, 500, 500, 17, 636, 2558, 7946, 618, 1, 18790, 1, 7946, 618, 500, 500, 1104, 20, 14, 200, 9, 13, 3, 2149, 169, 58, 549, 25, 21, 6871, 8415, 1357, 712, 1971, 3293, 16, 619, 7065, 1509, 49, 136, 17, 3486, 787, 119, 4353, 4322, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   *** Example ***
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   guid: 89800
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 52, 20, 44, 4230, 29, 636, 2558, 29021, 1, 29021, 500, 500, 9, 13, 3, 5373, 197, 135, 220, 63, 21, 8434, 2858, 2374, 30, 7034, 20, 14, 4245, 1149, 118, 96, 99, 218, 1149, 4008, 22282, 190, 1, 210, 13, 6930, 6105, 8898, 19, 14, 190, 16, 13, 29021, 18, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   *** Example ***
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   guid: 51017
+02/02/2023 14:49:05 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 3756, 68, 58, 6621, 18179, 13864, 15, 2524, 167, 28, 14, 1180, 3756, 68, 58, 54, 28088, 1541, 15, 25, 21, 636, 2558, 546, 10220, 9627, 1, 546, 10220, 9627, 500, 500, 1541, 19, 14, 636, 2558, 11407, 68, 1, 17345, 1, 11407, 68, 1321, 500, 500, 1784, 636, 2558, 5171, 68, 58, 1, 5171, 68, 58, 500, 500, 15, 1275, 20, 636, 2558, 2853, 1046, 1, 2853, 1046, 500, 500, 17, 636, 2558, 62, 20343, 11518, 1, 62, 20343, 11518, 500, 500, 9, 14, 1903, 19818, 6621, 18179, 13864, 25, 3981, 37, 14, 636, 2558, 10461, 1, 7020, 1, 10461, 500, 500, 715, 11471, 759, 13, 5, 103, 17638, 54, 1599, 6, 17, 13, 21907, 723, 13, 5, 21907, 6, 15, 21, 2801, 20, 14, 2539, 16, 82, 636, 2558, 21907, 1, 21907, 18, 500, 500, 9, 13, 3, 3756, 68, 58, 6621, 18179, 13864, 25, 21, 1541, 29, 3905, 15, 359, 1595, 20, 471, 2030, 54, 1172, 8255, 17, 1856, 1370, 7170, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/02/2023 14:49:05 - INFO - vitaminc.processing.multitask_sent_pair_cls -   Saving features into cached file data\cached_train_AlbertTokenizerFast_256_feverous_all [took 0.287 s]
+02/02/2023 14:49:07 - INFO - transformers.trainer -   max_steps is given, it will override any value given in num_train_epochs
+02/02/2023 14:49:07 - INFO - transformers.trainer -   ***** Running training *****
+02/02/2023 14:49:07 - INFO - transformers.trainer -     Num examples = 1000
+02/02/2023 14:49:07 - INFO - transformers.trainer -     Num Epochs = 400
+02/02/2023 14:49:07 - INFO - transformers.trainer -     Instantaneous batch size per device = 8
+02/02/2023 14:49:07 - INFO - transformers.trainer -     Total train batch size (w. parallel, distributed & accumulation) = 8
+02/02/2023 14:49:07 - INFO - transformers.trainer -     Gradient Accumulation steps = 1
+02/02/2023 14:49:07 - INFO - transformers.trainer -     Total optimization steps = 50000
+02/02/2023 14:49:07 - INFO - transformers.trainer -     Number of trainable parameters = 11685891
+02/02/2023 17:09:04 - INFO - transformers.trainer -   Saving model checkpoint to results/feverous_2\checkpoint-10000
+02/02/2023 17:09:04 - INFO - transformers.configuration_utils -   Configuration saved in results/feverous_2\checkpoint-10000\config.json
+02/02/2023 17:09:04 - INFO - transformers.modeling_utils -   Model weights saved in results/feverous_2\checkpoint-10000\pytorch_model.bin
+02/02/2023 19:30:59 - INFO - transformers.trainer -   Saving model checkpoint to results/feverous_2\checkpoint-20000
+02/02/2023 19:30:59 - INFO - transformers.configuration_utils -   Configuration saved in results/feverous_2\checkpoint-20000\config.json
+02/02/2023 19:30:59 - INFO - transformers.modeling_utils -   Model weights saved in results/feverous_2\checkpoint-20000\pytorch_model.bin
+02/02/2023 21:53:02 - INFO - transformers.trainer -   Saving model checkpoint to results/feverous_2\checkpoint-30000
+02/02/2023 21:53:02 - INFO - transformers.configuration_utils -   Configuration saved in results/feverous_2\checkpoint-30000\config.json
+02/02/2023 21:53:02 - INFO - transformers.modeling_utils -   Model weights saved in results/feverous_2\checkpoint-30000\pytorch_model.bin
+02/03/2023 00:11:19 - INFO - transformers.trainer -   Saving model checkpoint to results/feverous_2\checkpoint-40000
+02/03/2023 00:11:19 - INFO - transformers.configuration_utils -   Configuration saved in results/feverous_2\checkpoint-40000\config.json
+02/03/2023 00:11:19 - INFO - transformers.modeling_utils -   Model weights saved in results/feverous_2\checkpoint-40000\pytorch_model.bin
+02/03/2023 02:25:38 - INFO - transformers.trainer -   Saving model checkpoint to results/feverous_2\checkpoint-50000
+02/03/2023 02:25:38 - INFO - transformers.configuration_utils -   Configuration saved in results/feverous_2\checkpoint-50000\config.json
+02/03/2023 02:25:38 - INFO - transformers.modeling_utils -   Model weights saved in results/feverous_2\checkpoint-50000\pytorch_model.bin
+02/03/2023 02:25:38 - INFO - transformers.trainer -   
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+02/03/2023 02:25:38 - INFO - transformers.trainer -   Saving model checkpoint to results/feverous_2
+02/03/2023 02:25:38 - INFO - transformers.configuration_utils -   Configuration saved in results/feverous_2\config.json
+02/03/2023 02:25:38 - INFO - transformers.modeling_utils -   Model weights saved in results/feverous_2\pytorch_model.bin
+02/03/2023 02:25:38 - INFO - transformers.tokenization_utils_base -   tokenizer config file saved in results/feverous_2\tokenizer_config.json
+02/03/2023 02:25:38 - INFO - transformers.tokenization_utils_base -   Special tokens file saved in results/feverous_2\special_tokens_map.json
