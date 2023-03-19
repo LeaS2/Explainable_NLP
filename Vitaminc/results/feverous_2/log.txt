@@ -989,3 +989,444 @@ If your task is similar to the task the model of the checkpoint was trained on, 
 02/05/2023 16:00:57 - INFO - transformers.trainer -   ***** Running Evaluation *****
 02/05/2023 16:00:57 - INFO - transformers.trainer -     Num examples = 55197
 02/05/2023 16:00:57 - INFO - transformers.trainer -     Batch size = 128
+02/07/2023 14:53:47 - WARNING - __main__ -   Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
+02/07/2023 14:53:47 - INFO - __main__ -   Training/evaluation parameters VitCTrainingArgs(
+_n_gpu=0,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=False,
+do_predict=False,
+do_test=True,
+do_train=False,
+eval_accumulation_steps=None,
+eval_all_checkpoints=True,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=2e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=passive,
+log_level_replica=passive,
+log_on_each_node=True,
+logging_dir=results/feverous_2/runs/Feb07_14-53-47_login1,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=50000,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_hf,
+optim_args=None,
+output_dir=results/feverous_2,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=128,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=results/feverous_2,
+save_on_each_node=False,
+save_steps=10000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+test_on_best_ckpt=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+02/07/2023 14:53:48 - INFO - transformers.configuration_utils -   loading configuration file config.json from cache at /home/bleick/.cache/huggingface/hub/models--tals--albert-base-vitaminc-fever/snapshots/15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3/config.json
+02/07/2023 14:53:48 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "tals/albert-base-vitaminc-fever",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "feverous"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.26.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 14:53:48 - INFO - transformers.configuration_utils -   loading configuration file config.json from cache at /home/bleick/.cache/huggingface/hub/models--tals--albert-base-vitaminc-fever/snapshots/15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3/config.json
+02/07/2023 14:53:48 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "tals/albert-base-vitaminc-fever",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.26.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 14:53:48 - INFO - transformers.tokenization_utils_base -   loading file spiece.model from cache at /home/bleick/.cache/huggingface/hub/models--tals--albert-base-vitaminc-fever/snapshots/15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3/spiece.model
+02/07/2023 14:53:48 - INFO - transformers.tokenization_utils_base -   loading file tokenizer.json from cache at None
+02/07/2023 14:53:48 - INFO - transformers.tokenization_utils_base -   loading file added_tokens.json from cache at None
+02/07/2023 14:53:48 - INFO - transformers.tokenization_utils_base -   loading file special_tokens_map.json from cache at /home/bleick/.cache/huggingface/hub/models--tals--albert-base-vitaminc-fever/snapshots/15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3/special_tokens_map.json
+02/07/2023 14:53:48 - INFO - transformers.tokenization_utils_base -   loading file tokenizer_config.json from cache at /home/bleick/.cache/huggingface/hub/models--tals--albert-base-vitaminc-fever/snapshots/15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3/tokenizer_config.json
+02/07/2023 14:53:48 - INFO - transformers.configuration_utils -   loading configuration file config.json from cache at /home/bleick/.cache/huggingface/hub/models--tals--albert-base-vitaminc-fever/snapshots/15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3/config.json
+02/07/2023 14:53:48 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "tals/albert-base-vitaminc-fever",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.26.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 14:53:48 - INFO - transformers.configuration_utils -   loading configuration file config.json from cache at /home/bleick/.cache/huggingface/hub/models--tals--albert-base-vitaminc-fever/snapshots/15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3/config.json
+02/07/2023 14:53:48 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "tals/albert-base-vitaminc-fever",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.26.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 14:53:48 - INFO - transformers.modeling_utils -   loading weights file pytorch_model.bin from cache at /home/bleick/.cache/huggingface/hub/models--tals--albert-base-vitaminc-fever/snapshots/15de029c9f4e929c8f6cc56bc39fcac22f6bdbc3/pytorch_model.bin
+02/07/2023 14:53:49 - INFO - transformers.modeling_utils -   All model checkpoint weights were used when initializing AlbertForSequenceClassification.
+
+02/07/2023 14:53:49 - INFO - transformers.modeling_utils -   All the weights of AlbertForSequenceClassification were initialized from the model checkpoint at tals/albert-base-vitaminc-fever.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use AlbertForSequenceClassification for predictions without further training.
+02/07/2023 14:53:49 - INFO - transformers.trainer -   max_steps is given, it will override any value given in num_train_epochs
+02/07/2023 14:53:49 - INFO - vitaminc.processing.multitask_sent_pair_cls -   Collecting test examples (ratio=1.0) from dataset file at data/feverous
+02/07/2023 17:16:22 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+02/07/2023 17:16:22 - INFO - __main__ -   Training/evaluation parameters VitCTrainingArgs(output_dir='results/feverous_2', overwrite_output_dir=False, do_train=False, do_eval=None, do_predict=False, evaluation_strategy=<EvaluationStrategy.NO: 'no'>, prediction_loss_only=False, per_device_train_batch_size=8, per_device_eval_batch_size=128, per_gpu_train_batch_size=None, per_gpu_eval_batch_size=None, gradient_accumulation_steps=1, eval_accumulation_steps=None, learning_rate=2e-05, weight_decay=0.0, adam_beta1=0.9, adam_beta2=0.999, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=50000, lr_scheduler_type=<SchedulerType.LINEAR: 'linear'>, warmup_steps=0, logging_dir='runs/Feb07_17-16-22_serv-9208', logging_first_step=False, logging_steps=500, save_steps=10000, save_total_limit=None, no_cuda=False, seed=42, fp16=False, fp16_opt_level='O1', fp16_backend='auto', local_rank=-1, tpu_num_cores=None, tpu_metrics_debug=False, debug=False, dataloader_drop_last=False, eval_steps=500, dataloader_num_workers=0, past_index=-1, run_name='results/feverous_2', disable_tqdm=False, remove_unused_columns=True, label_names=None, load_best_model_at_end=False, metric_for_best_model=None, greater_is_better=None, ignore_data_skip=False, sharded_ddp=False, deepspeed=None, label_smoothing_factor=0.0, adafactor=False, group_by_length=False, report_to=['tensorboard'], ddp_find_unused_parameters=None, dataloader_pin_memory=True, eval_all_checkpoints=True, do_test=False, test_on_best_ckpt=False)
+02/07/2023 17:16:23 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmp08kszj3z
+02/07/2023 17:16:23 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json in cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 17:16:23 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 17:16:23 - INFO - transformers.configuration_utils -   loading configuration file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 17:16:23 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "vitc_fever/checkpoint-50000",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "feverous"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_2": 2
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 17:16:24 - INFO - transformers.configuration_utils -   loading configuration file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 17:16:24 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "vitc_fever/checkpoint-50000",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 17:16:24 - INFO - transformers.tokenization_utils_base -   Model name 'tals/albert-base-vitaminc-fever' not found in model shortcut name list (albert-base-v1, albert-large-v1, albert-xlarge-v1, albert-xxlarge-v1, albert-base-v2, albert-large-v2, albert-xlarge-v2, albert-xxlarge-v2). Assuming 'tals/albert-base-vitaminc-fever' is a path, a model identifier, or url to a directory containing tokenizer files.
+02/07/2023 17:16:24 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpq4m43ra0
+02/07/2023 17:16:24 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model in cache at /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 17:16:24 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 17:16:26 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpqk8le5oj
+02/07/2023 17:16:26 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json in cache at /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 17:16:26 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 17:16:27 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpvddoz272
+02/07/2023 17:16:27 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json in cache at /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 17:16:27 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 17:16:27 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model from cache at /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 17:16:27 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer.json from cache at None
+02/07/2023 17:16:27 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/added_tokens.json from cache at None
+02/07/2023 17:16:27 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json from cache at /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 17:16:27 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json from cache at /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 17:16:28 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpc4hwur13
+02/07/2023 17:16:29 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin in cache at /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 17:16:29 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 17:16:29 - INFO - transformers.modeling_utils -   loading weights file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin from cache at /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 17:16:29 - INFO - transformers.modeling_utils -   All model checkpoint weights were used when initializing AlbertForSequenceClassification.
+
+02/07/2023 17:16:29 - INFO - transformers.modeling_utils -   All the weights of AlbertForSequenceClassification were initialized from the model checkpoint at tals/albert-base-vitaminc-fever.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use AlbertForSequenceClassification for predictions without further training.
+02/07/2023 17:16:33 - INFO - transformers.trainer -   max_steps is given, it will override any value given in num_train_epochs

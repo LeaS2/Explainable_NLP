@@ -2680,3 +2680,430 @@ If your task is similar to the task the model of the checkpoint was trained on, 
 01/26/2023 18:02:14 - INFO - __main__ -     eval_runtime = 1176.7243
 01/26/2023 18:02:14 - INFO - __main__ -     eval_samples_per_second = 25.461
 01/26/2023 18:02:14 - INFO - __main__ -     eval_steps_per_second = 0.2
+02/07/2023 15:12:57 - WARNING - __main__ -   Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
+02/07/2023 15:12:57 - INFO - __main__ -   Training/evaluation parameters VitCTrainingArgs(output_dir='results/feverous', overwrite_output_dir=False, do_train=False, do_eval=None, do_predict=False, evaluation_strategy=<EvaluationStrategy.NO: 'no'>, prediction_loss_only=False, per_device_train_batch_size=8, per_device_eval_batch_size=128, per_gpu_train_batch_size=None, per_gpu_eval_batch_size=None, gradient_accumulation_steps=1, eval_accumulation_steps=None, learning_rate=2e-05, weight_decay=0.0, adam_beta1=0.9, adam_beta2=0.999, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=50000, lr_scheduler_type=<SchedulerType.LINEAR: 'linear'>, warmup_steps=0, logging_dir='runs/Feb07_15-12-57_serv-9208', logging_first_step=False, logging_steps=500, save_steps=10000, save_total_limit=None, no_cuda=False, seed=42, fp16=False, fp16_opt_level='O1', fp16_backend='auto', local_rank=-1, tpu_num_cores=None, tpu_metrics_debug=False, debug=False, dataloader_drop_last=False, eval_steps=500, dataloader_num_workers=0, past_index=-1, run_name='results/feverous', disable_tqdm=False, remove_unused_columns=True, label_names=None, load_best_model_at_end=False, metric_for_best_model=None, greater_is_better=None, ignore_data_skip=False, sharded_ddp=False, deepspeed=None, label_smoothing_factor=0.0, adafactor=False, group_by_length=False, report_to=['tensorboard'], ddp_find_unused_parameters=None, dataloader_pin_memory=True, eval_all_checkpoints=True, do_test=True, test_on_best_ckpt=False)
+02/07/2023 15:12:58 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpnat4hdqw
+02/07/2023 15:12:58 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json in cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 15:12:58 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 15:12:58 - INFO - transformers.configuration_utils -   loading configuration file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 15:12:58 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "vitc_fever/checkpoint-50000",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "feverous"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_2": 2
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 15:12:59 - INFO - transformers.configuration_utils -   loading configuration file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 15:12:59 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "vitc_fever/checkpoint-50000",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 15:12:59 - INFO - transformers.tokenization_utils_base -   Model name 'tals/albert-base-vitaminc-fever' not found in model shortcut name list (albert-base-v1, albert-large-v1, albert-xlarge-v1, albert-xxlarge-v1, albert-base-v2, albert-large-v2, albert-xlarge-v2, albert-xxlarge-v2). Assuming 'tals/albert-base-vitaminc-fever' is a path, a model identifier, or url to a directory containing tokenizer files.
+02/07/2023 15:12:59 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmp9846lxj7
+02/07/2023 15:13:00 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model in cache at /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 15:13:00 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 15:13:01 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpcxudcmas
+02/07/2023 15:13:02 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json in cache at /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 15:13:02 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 15:13:02 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpbmo3pxll
+02/07/2023 15:13:03 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json in cache at /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 15:13:03 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 15:13:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model from cache at /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 15:13:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer.json from cache at None
+02/07/2023 15:13:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/added_tokens.json from cache at None
+02/07/2023 15:13:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json from cache at /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 15:13:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json from cache at /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 15:13:04 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpjqsd2y4z
+02/07/2023 15:13:13 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin in cache at /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 15:13:13 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 15:13:13 - INFO - transformers.modeling_utils -   loading weights file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin from cache at /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 15:13:13 - INFO - transformers.modeling_utils -   All model checkpoint weights were used when initializing AlbertForSequenceClassification.
+
+02/07/2023 15:13:13 - INFO - transformers.modeling_utils -   All the weights of AlbertForSequenceClassification were initialized from the model checkpoint at tals/albert-base-vitaminc-fever.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use AlbertForSequenceClassification for predictions without further training.
+02/07/2023 15:13:13 - INFO - transformers.trainer -   max_steps is given, it will override any value given in num_train_epochs
+02/07/2023 15:13:13 - INFO - vitaminc.processing.multitask_sent_pair_cls -   Collecting test examples (ratio=1.0) from dataset file at data/feverous
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   guid: 5ed4de07c9e77c000848a180_1
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 496, 20, 14, 388, 29867, 596, 1230, 13, 5, 334, 2159, 13, 6, 13, 15, 280, 4102, 63, 74, 6935, 26, 539, 507, 2675, 17, 561, 9, 457, 507, 2391, 13, 15, 29, 21, 600, 16, 91, 119, 1137, 507, 2461, 2598, 19, 14, 1063, 13, 9, 3, 280, 4102, 117, 131, 1137, 9, 264, 507, 2598, 19, 14, 1063, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   guid: 5ed4de07c9e77c000848a180_2
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 496, 20, 14, 388, 29867, 596, 1230, 13, 5, 334, 2159, 13, 6, 13, 15, 280, 4102, 63, 74, 6935, 26, 539, 507, 2675, 13, 15, 137, 9, 240, 507, 763, 2675, 13, 15, 17, 561, 9, 457, 507, 2391, 13, 15, 29, 21, 600, 16, 91, 119, 937, 507, 2461, 2598, 19, 14, 1063, 13, 9, 3, 280, 4102, 117, 131, 1137, 9, 264, 507, 2598, 19, 14, 1063, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=1)
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   guid: 5ed4de07c9e77c000848a180_3
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 496, 20, 14, 388, 29867, 596, 1230, 13, 5, 334, 2159, 13, 6, 13, 15, 280, 4102, 63, 74, 6935, 26, 539, 507, 2675, 17, 561, 9, 457, 507, 2391, 13, 15, 29, 21, 600, 16, 91, 119, 1137, 507, 2461, 2598, 19, 14, 1063, 13, 9, 3, 280, 4102, 945, 91, 119, 137, 507, 763, 2675, 17, 117, 84, 1137, 9, 264, 507, 2598, 19, 14, 1063, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   guid: 5ed4de07c9e77c000848a180_4
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 496, 20, 14, 388, 29867, 596, 1230, 13, 5, 334, 2159, 13, 6, 13, 15, 280, 4102, 63, 74, 6935, 26, 539, 507, 2675, 13, 15, 137, 9, 240, 507, 763, 2675, 13, 15, 17, 561, 9, 457, 507, 2391, 13, 15, 29, 21, 600, 16, 91, 119, 937, 507, 2461, 2598, 19, 14, 1063, 13, 9, 3, 280, 4102, 945, 91, 119, 137, 507, 763, 2675, 17, 117, 84, 1137, 9, 264, 507, 2598, 19, 14, 1063, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   guid: 5ee39329c9e77c0008cc93d1_1
+02/07/2023 15:13:28 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 28, 21, 20474, 1857, 4058, 14, 283, 63, 7485, 5822, 18, 16, 91, 119, 808, 148, 17, 14, 2792, 16, 148, 37, 1166, 7997, 183, 8, 20989, 9, 3, 1180, 1166, 57, 11875, 69, 5822, 18, 16, 91, 119, 808, 148, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+02/07/2023 15:13:49 - INFO - vitaminc.processing.multitask_sent_pair_cls -   Saving features into cached file data/cached_test_AlbertTokenizerFast_256_feverous_all [took 20.362 s]
+02/07/2023 15:13:49 - INFO - transformers.trainer -   max_steps is given, it will override any value given in num_train_epochs
+02/07/2023 15:13:49 - INFO - __main__ -   Evaluating on feverous
+02/07/2023 15:13:49 - INFO - transformers.trainer -   ***** Running Evaluation *****
+02/07/2023 15:13:49 - INFO - transformers.trainer -     Num examples = 55197
+02/07/2023 15:13:49 - INFO - transformers.trainer -     Batch size = 128
+02/07/2023 15:40:20 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+02/07/2023 15:40:20 - INFO - __main__ -   Training/evaluation parameters VitCTrainingArgs(output_dir='results/feverous', overwrite_output_dir=False, do_train=False, do_eval=None, do_predict=False, evaluation_strategy=<EvaluationStrategy.NO: 'no'>, prediction_loss_only=False, per_device_train_batch_size=8, per_device_eval_batch_size=128, per_gpu_train_batch_size=None, per_gpu_eval_batch_size=None, gradient_accumulation_steps=1, eval_accumulation_steps=None, learning_rate=2e-05, weight_decay=0.0, adam_beta1=0.9, adam_beta2=0.999, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=50000, lr_scheduler_type=<SchedulerType.LINEAR: 'linear'>, warmup_steps=0, logging_dir='runs/Feb07_15-40-20_serv-9208', logging_first_step=False, logging_steps=500, save_steps=10000, save_total_limit=None, no_cuda=False, seed=42, fp16=False, fp16_opt_level='O1', fp16_backend='auto', local_rank=-1, tpu_num_cores=None, tpu_metrics_debug=False, debug=False, dataloader_drop_last=False, eval_steps=500, dataloader_num_workers=0, past_index=-1, run_name='results/feverous', disable_tqdm=False, remove_unused_columns=True, label_names=None, load_best_model_at_end=False, metric_for_best_model=None, greater_is_better=None, ignore_data_skip=False, sharded_ddp=False, deepspeed=None, label_smoothing_factor=0.0, adafactor=False, group_by_length=False, report_to=['tensorboard'], ddp_find_unused_parameters=None, dataloader_pin_memory=True, eval_all_checkpoints=True, do_test=True, test_on_best_ckpt=False)
+02/07/2023 15:40:21 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpyftu4563
+02/07/2023 15:40:21 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json in cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 15:40:21 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 15:40:21 - INFO - transformers.configuration_utils -   loading configuration file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 15:40:21 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "vitc_fever/checkpoint-50000",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "feverous"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_2": 2
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 15:40:22 - INFO - transformers.configuration_utils -   loading configuration file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 15:40:22 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "vitc_fever/checkpoint-50000",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 15:40:22 - INFO - transformers.tokenization_utils_base -   Model name 'tals/albert-base-vitaminc-fever' not found in model shortcut name list (albert-base-v1, albert-large-v1, albert-xlarge-v1, albert-xxlarge-v1, albert-base-v2, albert-large-v2, albert-xlarge-v2, albert-xxlarge-v2). Assuming 'tals/albert-base-vitaminc-fever' is a path, a model identifier, or url to a directory containing tokenizer files.
+02/07/2023 15:40:22 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpu15t5fd5
+02/07/2023 15:40:24 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model in cache at /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 15:40:24 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 15:40:27 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmp0ce5bysy
+02/07/2023 15:40:29 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json in cache at /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 15:40:29 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 15:40:29 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmphdiu81tp
+02/07/2023 15:40:30 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json in cache at /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 15:40:30 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 15:40:30 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model from cache at /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 15:40:30 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer.json from cache at None
+02/07/2023 15:40:30 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/added_tokens.json from cache at None
+02/07/2023 15:40:30 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json from cache at /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 15:40:30 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json from cache at /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 15:40:31 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmp5pnivv4w
+02/07/2023 15:41:41 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin in cache at /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 15:41:41 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 15:41:41 - INFO - transformers.modeling_utils -   loading weights file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin from cache at /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 15:41:42 - INFO - transformers.modeling_utils -   All model checkpoint weights were used when initializing AlbertForSequenceClassification.
+
+02/07/2023 15:41:42 - INFO - transformers.modeling_utils -   All the weights of AlbertForSequenceClassification were initialized from the model checkpoint at tals/albert-base-vitaminc-fever.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use AlbertForSequenceClassification for predictions without further training.
+02/07/2023 15:41:46 - INFO - transformers.trainer -   max_steps is given, it will override any value given in num_train_epochs
+02/07/2023 15:41:46 - INFO - vitaminc.processing.multitask_sent_pair_cls -   Collecting test examples (ratio=1.0) from dataset file at data/feverous
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   guid: 5ed4de07c9e77c000848a180_1
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 496, 20, 14, 388, 29867, 596, 1230, 13, 5, 334, 2159, 13, 6, 13, 15, 280, 4102, 63, 74, 6935, 26, 539, 507, 2675, 17, 561, 9, 457, 507, 2391, 13, 15, 29, 21, 600, 16, 91, 119, 1137, 507, 2461, 2598, 19, 14, 1063, 13, 9, 3, 280, 4102, 117, 131, 1137, 9, 264, 507, 2598, 19, 14, 1063, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   guid: 5ed4de07c9e77c000848a180_2
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 496, 20, 14, 388, 29867, 596, 1230, 13, 5, 334, 2159, 13, 6, 13, 15, 280, 4102, 63, 74, 6935, 26, 539, 507, 2675, 13, 15, 137, 9, 240, 507, 763, 2675, 13, 15, 17, 561, 9, 457, 507, 2391, 13, 15, 29, 21, 600, 16, 91, 119, 937, 507, 2461, 2598, 19, 14, 1063, 13, 9, 3, 280, 4102, 117, 131, 1137, 9, 264, 507, 2598, 19, 14, 1063, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=1)
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   guid: 5ed4de07c9e77c000848a180_3
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 496, 20, 14, 388, 29867, 596, 1230, 13, 5, 334, 2159, 13, 6, 13, 15, 280, 4102, 63, 74, 6935, 26, 539, 507, 2675, 17, 561, 9, 457, 507, 2391, 13, 15, 29, 21, 600, 16, 91, 119, 1137, 507, 2461, 2598, 19, 14, 1063, 13, 9, 3, 280, 4102, 945, 91, 119, 137, 507, 763, 2675, 17, 117, 84, 1137, 9, 264, 507, 2598, 19, 14, 1063, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=2)
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   guid: 5ed4de07c9e77c000848a180_4
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 496, 20, 14, 388, 29867, 596, 1230, 13, 5, 334, 2159, 13, 6, 13, 15, 280, 4102, 63, 74, 6935, 26, 539, 507, 2675, 13, 15, 137, 9, 240, 507, 763, 2675, 13, 15, 17, 561, 9, 457, 507, 2391, 13, 15, 29, 21, 600, 16, 91, 119, 937, 507, 2461, 2598, 19, 14, 1063, 13, 9, 3, 280, 4102, 945, 91, 119, 137, 507, 763, 2675, 17, 117, 84, 1137, 9, 264, 507, 2598, 19, 14, 1063, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   *** Example ***
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   guid: 5ee39329c9e77c0008cc93d1_1
+02/07/2023 15:42:00 - INFO - vitaminc.processing.utils -   features: InputFeatures(input_ids=[2, 28, 21, 20474, 1857, 4058, 14, 283, 63, 7485, 5822, 18, 16, 91, 119, 808, 148, 17, 14, 2792, 16, 148, 37, 1166, 7997, 183, 8, 20989, 9, 3, 1180, 1166, 57, 11875, 69, 5822, 18, 16, 91, 119, 808, 148, 13, 9, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+02/07/2023 15:42:22 - INFO - vitaminc.processing.multitask_sent_pair_cls -   Saving features into cached file data/cached_test_AlbertTokenizerFast_256_feverous_all [took 20.845 s]
+02/07/2023 15:42:22 - INFO - transformers.trainer -   max_steps is given, it will override any value given in num_train_epochs
+02/07/2023 15:42:22 - INFO - __main__ -   Evaluating on feverous
+02/07/2023 15:42:22 - INFO - transformers.trainer -   ***** Running Evaluation *****
+02/07/2023 15:42:22 - INFO - transformers.trainer -     Num examples = 55197
+02/07/2023 15:42:22 - INFO - transformers.trainer -     Batch size = 128
+02/07/2023 15:47:59 - INFO - __main__ -   ***** Test results feverous *****
+02/07/2023 15:47:59 - INFO - __main__ -     eval_loss = 0.3645276427268982
+02/07/2023 15:47:59 - INFO - __main__ -     eval_acc = 0.8805551026323895
+02/07/2023 15:47:59 - INFO - __main__ -     eval_macro_f1 = 0.8472908986308428
+02/07/2023 15:47:59 - INFO - __main__ -     eval_runtime = 336.6894
+02/07/2023 15:47:59 - INFO - __main__ -     eval_samples_per_second = 163.94
+02/07/2023 17:00:58 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+02/07/2023 17:00:58 - INFO - __main__ -   Training/evaluation parameters VitCTrainingArgs(output_dir='results/feverous', overwrite_output_dir=False, do_train=False, do_eval=None, do_predict=False, evaluation_strategy=<EvaluationStrategy.NO: 'no'>, prediction_loss_only=False, per_device_train_batch_size=8, per_device_eval_batch_size=128, per_gpu_train_batch_size=None, per_gpu_eval_batch_size=None, gradient_accumulation_steps=1, eval_accumulation_steps=None, learning_rate=2e-05, weight_decay=0.0, adam_beta1=0.9, adam_beta2=0.999, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=50000, lr_scheduler_type=<SchedulerType.LINEAR: 'linear'>, warmup_steps=0, logging_dir='runs/Feb07_17-00-58_serv-9208', logging_first_step=False, logging_steps=500, save_steps=10000, save_total_limit=None, no_cuda=False, seed=42, fp16=False, fp16_opt_level='O1', fp16_backend='auto', local_rank=-1, tpu_num_cores=None, tpu_metrics_debug=False, debug=False, dataloader_drop_last=False, eval_steps=500, dataloader_num_workers=0, past_index=-1, run_name='results/feverous', disable_tqdm=False, remove_unused_columns=True, label_names=None, load_best_model_at_end=False, metric_for_best_model=None, greater_is_better=None, ignore_data_skip=False, sharded_ddp=False, deepspeed=None, label_smoothing_factor=0.0, adafactor=False, group_by_length=False, report_to=['tensorboard'], ddp_find_unused_parameters=None, dataloader_pin_memory=True, eval_all_checkpoints=True, do_test=True, test_on_best_ckpt=False)
+02/07/2023 17:00:59 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmp_n6jgro8
+02/07/2023 17:00:59 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json in cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 17:00:59 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 17:00:59 - INFO - transformers.configuration_utils -   loading configuration file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 17:00:59 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "vitc_fever/checkpoint-50000",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "feverous"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_2": 2
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 17:01:00 - INFO - transformers.configuration_utils -   loading configuration file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/41fd59466159d48786110897b3d780f83acfbc5bc8282ab17cf888a3aecbef49.8b3d8d4ae5da2b27fc470a9914f3e870cf8a87f573b71c603ce66be72f09abe7
+02/07/2023 17:01:00 - INFO - transformers.configuration_utils -   Model config AlbertConfig {
+  "_name_or_path": "vitc_fever/checkpoint-50000",
+  "architectures": [
+    "AlbertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "bos_token_id": 2,
+  "classifier_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "eos_token_id": 3,
+  "finetuning_task": [
+    "vitc_real",
+    "vitc_synthetic",
+    "fever"
+  ],
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "SUPPORTS",
+    "1": "REFUTES",
+    "2": "NOT ENOUGH INFO"
+  },
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 3072,
+  "label2id": {
+    "NOT ENOUGH INFO": "2",
+    "REFUTES": "1",
+    "SUPPORTS": "0"
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "albert",
+  "net_structure_type": 0,
+  "num_attention_heads": 12,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 12,
+  "num_memory_blocks": 0,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0",
+  "type_vocab_size": 2,
+  "vocab_size": 30000
+}
+
+02/07/2023 17:01:00 - INFO - transformers.tokenization_utils_base -   Model name 'tals/albert-base-vitaminc-fever' not found in model shortcut name list (albert-base-v1, albert-large-v1, albert-xlarge-v1, albert-xxlarge-v1, albert-base-v2, albert-large-v2, albert-xlarge-v2, albert-xxlarge-v2). Assuming 'tals/albert-base-vitaminc-fever' is a path, a model identifier, or url to a directory containing tokenizer files.
+02/07/2023 17:01:00 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmprv0j3iau
+02/07/2023 17:01:00 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model in cache at /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 17:01:00 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 17:01:02 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpmahnxrfq
+02/07/2023 17:01:02 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json in cache at /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 17:01:02 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 17:01:03 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmp93j3mclw
+02/07/2023 17:01:03 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json in cache at /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 17:01:03 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 17:01:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/spiece.model from cache at /root/.cache/huggingface/transformers/7aacaf1e4ae6e087e966a814e6071a2bf1c80be24f4c0cc57fa0907242ea68e4.1f8b90a03f83ee30ea32a414a46d417a91d5ed797e90664b02b7591531a8e0e9
+02/07/2023 17:01:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer.json from cache at None
+02/07/2023 17:01:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/added_tokens.json from cache at None
+02/07/2023 17:01:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/special_tokens_map.json from cache at /root/.cache/huggingface/transformers/8c82e8d7c3bcf544d301b8d4777d1b6dd7b700c7f58c955f19d289a1f70eceeb.623993453f3f6b9f6ad831899812f482e5cde100e664124feb3a6446d69a26bf
+02/07/2023 17:01:03 - INFO - transformers.tokenization_utils_base -   loading file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/tokenizer_config.json from cache at /root/.cache/huggingface/transformers/3a40dcef47d1d3a91cda05c752bbcd6206d3b3f9d51c0de439adc38b652da49d.7f7ace06b0faaa16d30d7aba993112e16d81588fd5afa15b88262da4af208014
+02/07/2023 17:01:04 - INFO - transformers.file_utils -   https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpw8m7xke8
+02/07/2023 17:01:05 - INFO - transformers.file_utils -   storing https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin in cache at /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 17:01:05 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 17:01:05 - INFO - transformers.modeling_utils -   loading weights file https://huggingface.co/tals/albert-base-vitaminc-fever/resolve/main/pytorch_model.bin from cache at /root/.cache/huggingface/transformers/bc146aa70c6b970fc726f903e34f2b06b914886a365409e34b9fd738807ecfc7.36d94c7865a57ac31a6ac22b015e6400e842e3bec8b7ab9a68a001ee2ac8a367
+02/07/2023 17:01:05 - INFO - transformers.modeling_utils -   All model checkpoint weights were used when initializing AlbertForSequenceClassification.
+
+02/07/2023 17:01:05 - INFO - transformers.modeling_utils -   All the weights of AlbertForSequenceClassification were initialized from the model checkpoint at tals/albert-base-vitaminc-fever.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use AlbertForSequenceClassification for predictions without further training.
+02/07/2023 17:01:09 - INFO - transformers.trainer -   max_steps is given, it will override any value given in num_train_epochs
+02/07/2023 17:01:09 - WARNING - vitaminc.processing.utils -   No stored url for task feverous. Please download manually.
+02/07/2023 17:01:09 - INFO - vitaminc.processing.multitask_sent_pair_cls -   Collecting test examples (ratio=1.0) from dataset file at data/feverous/feverous
